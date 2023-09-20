@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: DuckMoving
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[{"name":"speed","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"DuckMoving","summary":null,"pan":{"x":33.0,"y":5.099998},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":-144.0},"guid":"e345f9eb-9a5c-4236-b3ae-5019f8ded7f4","$version":"A","$type":"Unity.VisualScripting.Start","$id":"10"},{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":60.0},"guid":"85e9ac60-5aea-42c8-8a3b-277b76b89641","$version":"A","$type":"Unity.VisualScripting.Update"},{"chainable":false,"parameterNames":["message"],"member":{"name":"print","parameterTypes":["System.Object"],"targetType":"UnityEngine.MonoBehaviour","targetTypeName":"UnityEngine.MonoBehaviour","$version":"A"},"defaultValues":{},"position":{"x":28.0,"y":-170.0},"guid":"ade109a6-7b8a-4dc5-be76-0de2285deded","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"type":"System.String","value":{"$content":"\"I''m
+      Duck\"","$type":"System.String"},"defaultValues":{},"position":{"x":-165.0,"y":-59.0},"guid":"e1811a22-d2ee-4ec6-83ec-46f4293522c9","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"18"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Speed","$type":"System.String"},"object":null},"position":{"x":51.0,"y":-11.0},"guid":"d25456fa-a01b-4c9e-87cb-3fb3c7ed4f89","$version":"A","$type":"Unity.VisualScripting.GetVariable"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"aeef762f-62f3-4b6a-b183-a12247310cd5","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"output","destinationUnit":{"$ref":"14"},"destinationKey":"%message","guid":"68cd1693-d19c-42ad-a042-242de4ea612f","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
