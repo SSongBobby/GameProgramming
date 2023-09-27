@@ -5331,6 +5331,9 @@ MonoBehaviour:
   enemies: []
   duckPrefab: {fileID: 7424536363513097163, guid: ea69bfebe57962d468812d8f82819912, type: 3}
   spawnPoint: {fileID: 678458858424829044}
+  onChanged:
+    m_PersistentCalls:
+      m_Calls: []
   duckDeathSound: {fileID: 826139554}
   amount: 0
 --- !u!4 &826139553
@@ -9784,9 +9787,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7424536363513097163, guid: ea69bfebe57962d468812d8f82819912, type: 3}
-  startTime: 2
-  endTime: 200
-  spawnRate: 1
+  startTime: 6
+  endTime: 60
+  spawnRate: 2
 --- !u!4 &1483988483
 Transform:
   m_ObjectHideFlags: 0

@@ -8,12 +8,11 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyManager.instance.enemies.Add(this);
+        EnemyManager.instance.AddEnemy(this);
     }
 
     private void OnDestroy()
     {
-        EnemyManager.instance.PlayDeathSound();
-        EnemyManager.instance.enemies.Remove(this);
+        EnemyManager.instance.RemoveEnemy(this);
     }
 }

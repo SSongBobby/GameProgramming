@@ -10,32 +10,20 @@ public class WavesGameMode : MonoBehaviour
 
     void Start()
     {
-        playerLife.onDeath.AddListener(OnPlayerOrBaseDied);
+        playerLife.onDeath.AddListener(OnPlayerDied);
+        EnemyManager.instance.onChanged.AddListener(CheckWinCondition);
     }
 
-    void OnPlayerOrBaseDied()
+    void OnPlayerDied()
     {
         SceneManager.LoadScene("LoseScreen");
     }
 
     void CheckWinCondition()
     {
-        if (EnemyManager.instance.enemies.Count <= 0 && WavesManager.instance.waves.Count <= 0)
+        if (EnemyManager.instance.enemies.Count <= 0)
         {
             SceneManager.LoadScene("WinScreen");
-        }
-    }
-
-    void Update()
-    {
-        if (EnemyManager.instance.enemies.Count <= 0 && WavesManager.instance.waves.Count <= 0)
-        {
-            SceneManager.LoadScene("WinScreen");
-        }
-
-        if (playerLife.amount <= 0)
-        {
-            SceneManager.LoadScene("LoseScreen");
         }
     }
 }      

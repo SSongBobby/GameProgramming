@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour
 {
     public List<Enemy> enemies;
     public GameObject duckPrefab;
     public Transform spawnPoint;
+    public UnityEvent onChanged;
 
     public static EnemyManager instance;
 
@@ -25,11 +27,18 @@ public class EnemyManager : MonoBehaviour
             Debug.Log("Duplicated EnemyManager, ignoring this one", gameObject);
     }
 
-    public void PlayDeathSound()
+    public void AddEnemy(Enemy enemy)
     {
-        duckDeathSound.Play();
+        enemies.Add(enemy);
+        onChanged.Invoke();
     }
 
+    public void RemoveEnemy(Enemy enemy)
+    {
+        duckDeathSound.Play();
+        enemies.Remove(enemy);
+        onChanged.Invoke();
+    }
     //// Start is called before the first frame update
     void Start()
     {
