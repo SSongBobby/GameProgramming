@@ -20,7 +20,7 @@ public class Duck : MonoBehaviour
         Vector3 startPosition = new Vector3(spawnTransformX, -4, spawnTransformZ);
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(0f, randomYRotation, 0f);
-        Destroy(this.gameObject, 6f);
+        Destroy(this.gameObject, 15f);
     }
 
     // Update is called once per frame

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1458394180984599116}
   - component: {fileID: -563776729253120327}
   - component: {fileID: -5968012120767805185}
-  m_Layer: 0
+  - component: {fileID: 1586578309963263392}
+  m_Layer: 7
   m_Name: WaterGun_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -147,3 +148,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1586578309963263392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3717960826342818355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8a42b68976ad4e8ed7a9cde34ae5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

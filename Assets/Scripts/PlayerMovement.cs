@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera myCamera;
     private bool isRunning = false;
 
+
     private Rigidbody rb;
 
     void Awake()
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         currentSpeed = walkSpeed;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     public void OnMove(InputValue value)
@@ -53,12 +56,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(
-            movementValue.x * Time.deltaTime,
-            0,
-            movementValue.y * Time.deltaTime);
+        rb.AddRelativeForce(movementValue.x * 100 * Time.deltaTime, 0, movementValue.y * 100 * Time.deltaTime);
 
-        transform.Rotate(0, lookValue.x * Time.deltaTime, 0);
+        rb.AddRelativeTorque(0, lookValue.x * Time.deltaTime, 0);
+
+
+        //transform.Translate(
+        //    movementValue.x * Time.deltaTime,
+        //    0,
+        //    movementValue.y * Time.deltaTime);
+
+        //transform.Rotate(0, lookValue.x * Time.deltaTime, 0);
 
         myCamera.transform.Rotate(-lookValue.y * Time.deltaTime, 0, 0);
 

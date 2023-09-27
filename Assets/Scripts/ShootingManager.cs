@@ -12,10 +12,15 @@ public class ShootingManager : MonoBehaviour
     public GameObject shark;
     private GameObject currentBullet;
 
+    [SerializeField]
+    private AudioSource watergunSound, sharkSound;
+
+    private AudioSource currentBulletSound;
+
     public void OnFire()
     {
-        Debug.Log("onShoot");
         Instantiate(currentBullet, shootingPoint);
+        currentBulletSound.Play();
     }
 
     public void OnChangeShark()
@@ -23,18 +28,21 @@ public class ShootingManager : MonoBehaviour
         gun.SetActive(false);
         shark.SetActive(true);
         currentBullet = sharkBullet;
+        currentBulletSound = sharkSound;
     }
     public void OnChangeGun()
     {
         gun.SetActive(true);
         shark.SetActive(false);
         currentBullet = gunBullet;
+        currentBulletSound = watergunSound;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         currentBullet = gunBullet;
+        currentBulletSound = watergunSound;
     }
 
     // Update is called once per frame

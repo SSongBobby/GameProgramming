@@ -4,19 +4,42 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public List<Enemy> enemies;
     public GameObject duckPrefab;
     public Transform spawnPoint;
 
-    // Start is called before the first frame update
-    void Start()
+    public static EnemyManager instance;
+
+    [SerializeField]
+    private AudioSource duckDeathSound;
+
+    public int amount;
+
+    private void Awake()
     {
-        InvokeRepeating("SpawnEnemy", 0f, 2f);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Debug.Log("Duplicated EnemyManager, ignoring this one", gameObject);
     }
 
-    private void SpawnEnemy()
+    public void PlayDeathSound()
     {
-        Instantiate(duckPrefab, spawnPoint);
+        duckDeathSound.Play();
     }
+
+    //// Start is called before the first frame update
+    void Start()
+    {
+        duckDeathSound = this.GetComponent<AudioSource>();
+    }
+
+    //private void SpawnEnemy()
+    //{
+    //    Instantiate(duckPrefab, spawnPoint);
+    //}
 
     // Update is called once per frame
     void Update()
