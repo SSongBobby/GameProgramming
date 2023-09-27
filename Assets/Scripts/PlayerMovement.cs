@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera myCamera;
     private bool isRunning = false;
 
+    private Rigidbody rb;
+
     void Awake()
     {
         Cursor.visible = false;
