@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Konkuk_LandMark.unity
+    guid: a26e6a8ceb476c84386e20f440c85e39
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 42c858a7e72c5f247a767ebb02fa45e3
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 789e9b16c7d66874098a69a1ea56f0ac
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 7f53379c93fb7fe4f8c938abfbfc65dd, type: 2}

@@ -7,7 +7,8 @@ public class EnemyManager : MonoBehaviour
 {
     public List<Enemy> enemies;
     public GameObject duckPrefab;
-    public Transform spawnPoint;
+    public GameObject duckPersonPrefab;
+    public Transform spawnPoint, duckPersonSpawnPoint;
     public UnityEvent onChanged;
 
     public static EnemyManager instance;
@@ -33,6 +34,11 @@ public class EnemyManager : MonoBehaviour
         onChanged.Invoke();
     }
 
+    public void SpawnDuckPerson()
+    {
+        Instantiate(duckPersonPrefab, duckPersonSpawnPoint);
+    }
+
     public void RemoveEnemy(Enemy enemy)
     {
         duckDeathSound.Play();
@@ -45,12 +51,6 @@ public class EnemyManager : MonoBehaviour
         duckDeathSound = this.GetComponent<AudioSource>();
     }
 
-    //private void SpawnEnemy()
-    //{
-    //    Instantiate(duckPrefab, spawnPoint);
-    //}
-
-    // Update is called once per frame
     void Update()
     {
         
