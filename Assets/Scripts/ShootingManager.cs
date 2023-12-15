@@ -10,6 +10,7 @@ public class ShootingManager : MonoBehaviour
     public GameObject sharkBullet;
     public GameObject gun;
     public GameObject shark;
+    public GameObject pauseUI;
     private GameObject currentBullet;
 
     [SerializeField]
@@ -36,6 +37,12 @@ public class ShootingManager : MonoBehaviour
         shark.SetActive(false);
         currentBullet = gunBullet;
         currentBulletSound = watergunSound;
+    }
+    public void OnPause()
+    {
+        pauseUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Start is called before the first frame update
